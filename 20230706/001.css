@@ -1,0 +1,35 @@
+/* body {
+    color: red;
+} */
+
+h1 {
+color: inherit;
+}
+
+strong {
+border-bottom: 5px solid currentColor;
+}
+
+h2{
+    color: royalblue;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.parents{
+    width: 200px;
+    height: 200px;
+    font-size: 100px;
+    background-color: aquamarine;
+}
+
+.child{
+    width: 50vw;
+    height: 10vh;
+    font-size: 0.5em;
+    background-color: beige;
+}
+
+/* 16px * 4 = 64px */
+p{
+    font-size: 4rem;
+}

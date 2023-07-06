@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역변수</title>
+    <style>
+        :root{
+            --main-color: royalblue;
+            --padding: 4px 40px;
+        }
+        
+        p {
+            color: var(--main-color);
+        }
+
+        p::before{
+            content: '7기 여러분';
+        }
+
+        p::after{
+            content: '😊';
+        }
+
+        button {
+            padding: var(--padding);
+        }
+
+        div::before{
+            content: '여러분~'
+        }
+
+        div::after{
+            content: ' 즐거운 저녁시간 되세요!'
+        }
+
+        :nth-of-type(2) {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p>안녕하세요</p>
+    <button>클릭</button>
+
+
+    <p>으아 더워</p>
+    <p>으아 더워</p>
+    <p>으아 더워</p>
+    <p>으아 더워</p>
+
+    <div> 오늘도 고생하셨습니다 </div>
+    <div> 오늘도 고생하셨습니다 </div>
+    <div> 오늘도 고생하셨습니다 </div>
+    <div> 오늘도 고생하셨습니다 </div>
+    <div> 오늘도 고생하셨습니다 </div>
+    <div> 오늘도 고생하셨습니다 </div>
+</body>
+</html>ㄴ
