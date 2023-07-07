@@ -1,0 +1,15 @@
+div #id1 {
+    color: green;
+}
+
+p #id1 {
+    color: black;
+}
+
+#id1 {
+    color: blue;
+}
+
+.class {
+    color: yellow;
+}

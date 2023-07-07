@@ -1,0 +1,40 @@
+div{
+    width: 150px;
+    margin: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.box1{
+    box-sizing: border-box;
+    background-color: #1D267D;
+    color: white;
+    padding: 1rem 1.5rem;
+    border: 2px solid #0C134F;
+    box-shadow: inset 2px 2px #71727e;
+}
+
+.box2{
+    background-color: #343f50;
+    border: 5px solid #000;
+    box-shadow: inset 5px 5px #71727e;
+    height: 50px;
+}
+
+.box3{
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
+    color:white;
+    background: linear-gradient(90deg,#9376E0, #E893CF );
+    border: 5px dashed #F3BCC8;
+    border-radius: 50px;
+    background-clip: padding-box;
+}
+
+.box4{
+    padding: 1rem 1.5rem;
+    background-color: white;
+    border: 2px solid rgb(221, 220, 220);
+    border-radius: 0 50px 50px 50px;
+    box-shadow: 10px 10px 20px rgba(196, 195, 195, 0.5) ;
+}
