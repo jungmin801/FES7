@@ -3,6 +3,7 @@ div{
     margin: 10px;
     font-size: 1.5rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .box1{
@@ -15,9 +16,10 @@ div{
 }
 
 .box2{
+    width: 100px;
     background-color: #343f50;
-    border: 5px solid #000;
-    box-shadow: inset 5px 5px #71727e;
+    border: 8px solid #000;
+    box-shadow: inset 8px 8px #71727e;
     height: 50px;
 }
 
@@ -25,13 +27,14 @@ div{
     box-sizing: border-box;
     padding: 1rem 1.5rem;
     color:white;
-    background: linear-gradient(90deg,#9376E0, #E893CF );
+    background: linear-gradient(90deg,#9376E0, #E893CF);
     border: 5px dashed #F3BCC8;
     border-radius: 50px;
     background-clip: padding-box;
 }
 
 .box4{
+    box-sizing: border-box;
     padding: 1rem 1.5rem;
     background-color: white;
     border: 2px solid rgb(221, 220, 220);
