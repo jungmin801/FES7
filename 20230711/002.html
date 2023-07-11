@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout</title>
+    <style>
+        body {
+            color: white;
+            text-align: center;
+            vertical-align: center;
+        }
+
+        .ex1 header {
+            background-color: gold;
+            height: 100px;
+            line-height: 100px;
+        }
+
+        .ex1 section {
+            background-color: navy;
+            width: 60%;
+            height: 150px;
+            float: left;
+            line-height: 150px;
+        }
+
+        .ex1 aside {
+            background-color: skyblue;
+            width: 40%;
+            height: 150px;
+            float: left;
+            line-height: 150px;
+        }
+
+        .ex1 footer {
+            background-color: salmon;
+            height: 100px;
+            line-height: 100px;
+            /* clear: both; */
+        }
+
+        .clear-fix::after {
+            content: '';
+            display: block;
+            clear: left;
+        }
+
+
+        .ex2 header {
+            background-color: gold;
+            height: 100px;
+            line-height: 100px;
+        }
+
+        .ex2 section {
+            background-color: navy;
+            height: 150px;
+            line-height: 150px;
+        }
+
+        .ex2 aside {
+            background-color: skyblue;
+            height: 150px;
+            line-height: 150px;
+        }
+
+        .ex2 footer {
+            background-color: salmon;
+            height: 100px;
+            line-height: 100px;
+            /* clear: both; */
+        }
+
+        .wrap{
+            display: flex;
+        }
+        .wrap section{ 
+            flex-grow: 3;
+        }
+        .wrap aside{
+            flex-grow: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="ex1">
+        <header>header</header>
+        <div class="clear-fix">
+            <section>section</section>
+            <aside>aside</aside>
+        </div>
+        <footer>footer</footer>
+    </div>
+    <hr>
+    <div class="ex2">
+        <header>header</header>
+        <div class="wrap">
+            <section>section</section>
+            <aside>aside</aside>
+        </div>
+        <footer>footer</footer>
+    </div>
+
+</body>
+
+</html>
