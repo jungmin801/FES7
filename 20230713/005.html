@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+    <style>
+        :root{
+            --bg1: #1A202C;
+            --bg2: #2D3848;
+            --bg3: #4A5568;
+            --box-color: #343F50;
+        }
+
+        button {
+            width: 88px;
+            height: 32px;
+            background-color: var(--box-color);
+            color: #CBD5DF;
+            font-weight: bold;
+            border: 1px solid var(--bg1);
+            box-shadow: inset 1px 1px var(--bg3);
+        }
+
+        .btn1:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .btn1:active {
+            box-shadow: inset 1px 1px #1A202C ;
+        }
+
+        .btn1:disabled {
+            color: #4A5568;
+            text-decoration: none;
+        }
+
+        .btn2{
+            color: #439AFF;
+        }
+        
+        .btn2:hover{
+            background-color: #439AFF;
+            color:white;
+            text-decoration: underline;
+            border: 1px solid #439AFF;
+            box-shadow: inset 1px 1px #73B4FF;
+        }
+
+        .btn2:active{
+            box-shadow: inset 1px 1px #3B78BE;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <button type="button" class="btn1">Button</button>
+    <button type="button"  class="btn1" disabled>Button</button>
+    <hr>
+    <button type="button" class="btn2">Button</button>
+</body>
+
+</html>

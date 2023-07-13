@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 변수</title>
+    <style>
+        /* 전역변수 */
+        :root{
+            --main-color : royalblue;
+            --pane-padding : 0.5em 2em;
+            --radius: 0.4em;
+        }
+
+        button{
+            --border-width : 1px 2px 3px 4px;
+
+            color: var(--main-color, blue);
+            border-color: var(--main-color, blue);
+            padding : var(--pane-padding);
+            border-style: solid;
+            border-width: var(--border-width);
+        }
+
+        /* 지역변수 */
+        .dark{
+            --bg1 : #000;
+            --color1 : white;
+        }
+
+        .light{
+            --bg2 : #eee;
+        }
+
+        section{
+            background-color: var(--bg1);
+            color: var(--color1)
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <section class="light">
+        <button type="button">버튼</button>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error quas repellendus, temporibus illo quibusdam exercitationem nam asperiores natus dolor odit magni voluptatibus deserunt numquam excepturi quis, velit non similique provident?</p>
+    </section>
+    <section class="dark">
+        <button type="button">버튼</button>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error quas repellendus, temporibus illo quibusdam exercitationem nam asperiores natus dolor odit magni voluptatibus deserunt numquam excepturi quis, velit non similique provident?</p>
+    </section>
+</body>
+</html>

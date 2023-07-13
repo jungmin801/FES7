@@ -1,0 +1,30 @@
+:root{
+    --bg-color: rgb(180, 213, 255, 0.8);
+    --border-color: #213555;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 2px solid var(--border-color)
+}
+th,
+td {
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+th {
+    background-color: rgb(180, 213, 255, 0.8);
+}
+
+caption {
+    caption-side: bottom;
+    margin-top: 10px;
+}
+
+tfoot {
+    font-weight: bold;
+}

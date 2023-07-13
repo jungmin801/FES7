@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 함수</title>
+    <style>
+        /* div{
+            background-color: skyblue;
+            width: calc(100% - 10rem);
+        }
+         */
+        .wrap {
+            width: 1400px;
+            margin: auto;
+            /* 양 옆 여백을 30px씩 제외 */
+            max-width: calc(100% - 60px);
+            background-color: aquamarine;
+        }
+
+        ul,
+        li{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+
+        li{
+            float: left;
+            background-color: pink;
+            width: calc((100% - (20px*2))/3);
+        }
+
+        li:not(:first-child){
+            margin-left:20px;
+        }
+
+        li:nth-child(even){
+            background-color: seagreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        hello
+    </div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>

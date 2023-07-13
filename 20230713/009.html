@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        .col{
+            background-color: aqua;
+        }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <caption>테이블 이름</caption>
+        <colgroup>
+            <col>
+            <col span="2" class="col">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>제목</th>
+                <th>제목</th>
+                <th>제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>제목</th>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>합계</th>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
