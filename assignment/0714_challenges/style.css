@@ -1,0 +1,50 @@
+h1,
+p {
+    margin: unset;
+    padding: unset;
+}
+
+h1{
+    font-size: unset;
+    font-weight: unset;
+}
+
+body{
+    background-image: url(images/bg.png);
+    font-family: Arial, sans-serif;
+    height: 100vh; */
+    position: relative;
+}
+
+.wrapper{
+    width: 300px;
+    /* margin:0 auto; */
+    overflow: hidden;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contents-area{
+    background-color: #9C6035;
+    border-radius: 0 0 30px 30px;
+    border-bottom: 10px solid #46260E;
+}
+
+.contents-area .contents { 
+    padding: 10px 20px 20px 20px;
+}
+
+.contents > h1{
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.contents > p{
+    width: fit-content;
+    margin-top: 10px;
+    color: #E8BC9C;
+}
