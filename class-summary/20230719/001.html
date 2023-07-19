@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+
+        main{
+            width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-areas: 
+            "a b"
+            "a c";
+        }
+
+        .sec-a {
+            grid-area: a;
+            background-color: skyblue;
+        }
+
+        .sec-b {
+
+            grid-area: b;
+            background-color: gold;
+        }
+
+        .sec-c {
+            grid-area: c;
+            background-color: mediumseagreen;
+        }
+
+        @media (min-width:391px) and (max-width:768px) {
+            body{
+                background-color: tomato;
+            }
+            main{
+                max-width: 600px;
+                grid-template-areas: 
+                "a a"
+                "b c";
+            }
+            
+        }
+
+        @media (max-width:390px) {
+            body{
+                background-color: blueviolet;
+                
+            }
+
+            main{
+                max-width: 300px;
+                grid-template-areas: 
+                "a"
+                "b"
+                "c";
+        }
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="sec-a">A</section>
+        <section class="sec-b">B</section>
+        <section class="sec-c">C</section>
+        
+        
+    </ma>
+</body>
+</html>
