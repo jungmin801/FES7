@@ -1,0 +1,354 @@
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
+    --bg-color:#AAE6FF;
+    --skin: #A4907C;
+    --black:  #0F0F0F;
+    --pink: #FFBFA9;
+    --white: #eee;
+}
+
+body{
+    background-color: var(--bg-color);
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'omyu_pretty', sans-serif ;
+}
+
+/* 캐릭터 그리기 */
+
+.otter{
+    position: relative;
+
+    width: 420px;
+    height: 408px;
+    animation: jump 0.6s cubic-bezier(0, 0, 0.18, 0.99) infinite alternate;
+
+    transition: all 0.3s;
+}
+
+/* 얼굴 */
+.otter .face{
+    width: 412px;
+    height: 400px;
+
+    border-radius: 284px 284px 200px 200px;
+    border: 4px solid var(--black);
+    background-color: var(--skin);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+}
+
+/* 귀 */
+.otter .ear{
+    position:absolute;
+    top: 133px;
+
+    width: 34px;
+    height: 54px;
+
+    background-color: var(--skin);
+    border: 4px solid var(--black);
+    border-radius: 40px ;
+
+    box-sizing: border-box;
+}
+
+.otter .ear.left{
+    left: -0.7em;
+    transform: rotate(-98deg);
+
+    animation: moving-ears-left 0.6s cubic-bezier(0, 0, 0.18, 0.99) infinite alternate;
+}
+
+.otter .ear.right{
+    right: -0.7em;
+    transform: rotate(98deg);
+
+    animation: moving-ears-right 0.6s cubic-bezier(0, 0, 0.18, 0.99) infinite alternate;
+}
+
+/* 눈 */
+
+.otter .eye{
+    position:absolute;
+    top: 193px;
+
+    width: 31px;
+    height: 35px;
+
+    background-color: var(--black);
+    border-radius: 45px
+}
+
+.otter .eye.left{
+    left: 30%;
+}
+
+.otter .eye.right{
+    right: 30%;
+}
+
+.otter .eye::after{
+    content: '';
+
+    position:absolute;
+    left: 4px;
+
+    width: 16px;
+    height: 17px;
+
+    background-color: var(--white);
+    border-radius: 45px;
+
+    z-index: 100;
+}
+
+/* 코 */
+.otter .nose{
+    position:absolute;
+    top: 220px;
+    left: 50%;
+    transform: translateX(-60%);
+    rotate: -45deg;
+    z-index: 100;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: var(--black);
+    border-radius: 12px;
+}    
+
+.otter .rnd {
+    position:absolute;
+    top: 223px;
+
+    width: 68px;
+    height: 58px;
+
+    background-color: var(--white);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.otter .rnd.left{
+    left: 50%;
+    transform: translateX(-90%);
+    rotate: -19deg;
+}
+
+.otter .rnd.right{
+    right: 50%;
+    transform: translateX(90%);
+    rotate: 19deg;
+}
+
+/* 입 */
+
+.otter .mouth-line{
+    position:absolute;
+    top: 263px;
+    left: 50%;
+
+    width: 3px;
+    height: 27px;
+
+    background-color: var(--black);
+    z-index: 60;
+}
+
+.otter .mouth-underline{
+    position:absolute;
+    top: 285px;
+
+    width: 3px;
+    height: 20px;
+
+    background-color: var(--black);
+}
+
+.otter .mouth-underline.left{
+    position:absolute;
+    
+    left: 48%;
+
+    rotate: 55deg;
+    z-index: 110;
+}
+
+.otter .mouth-underline.right{
+    position:absolute;
+    right: 47.5%;
+
+    rotate: -55deg;
+    z-index: 110;
+}
+
+.otter .lips{
+    position: absolute;
+    bottom: 92px;
+    left: 45.8%;
+    
+
+    width: 38px;
+    height: 38px;
+    transform: rotate(-45.872deg);
+    
+    border-radius: 7px;
+    background: #FFBFA9;
+
+    z-index: 5;
+}
+
+/* 뺨 */
+.otter .cheeks{
+    position: absolute;
+    top: 250px;
+
+    width: 46px;
+    height: 31px;
+
+    background-color: var(--pink);
+
+    border-radius: 50%;
+}
+
+.otter .cheeks.left{
+    left: 15%;
+    transform: translateX(-50%);
+}
+
+.otter .cheeks.right{
+    right: 15%;
+    transform: translateX(50%);
+}
+
+/* 수염 */
+
+.Whiskers-box{
+    position: absolute;
+
+    top: 254px;
+
+    width: 44px;
+    height: 36px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-direction: column;
+
+    z-index: 200;
+}
+
+.Whiskers-box.left{
+    left: 30%
+}
+
+.Whiskers-box.right{
+    right: 30%;
+    rotate: -180deg;
+}
+
+.Whiskers-box .Whiskers{
+    width: 43px;
+    height: 3px;
+
+    background-color: var(--black);
+    border-radius: 10px;
+    
+}
+
+.Whiskers-box .Whiskers.top{
+    rotate: -163deg;
+}
+
+.Whiskers-box .Whiskers.bottom{
+    rotate: 163deg;
+}
+
+/* 조개 */
+
+.otter .shell{
+    position: absolute;
+    z-index: 500;
+
+    top: -50px;
+    left: calc(50% - (181px / 2));
+
+    animation: jump 0.6s 0.1s cubic-bezier(0, 0, 0.18, 0.99) infinite alternate;
+}
+
+/* 말풍선 */
+
+.otter .words{
+    display: none;
+    background-image: url(./img/img1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: 90px;
+    height: 90px;
+    padding: 30px 20px 25px 33px ;
+
+    position: absolute;
+    right: -50px;
+    z-index: 500;
+
+    text-align: center;
+    box-sizing: border-box;
+
+    font-weight: 700;
+    font-size: 20px;  
+}
+
+.otter:hover .words{
+
+    display: block;
+
+}
+
+
+
+/* 애니메이션 */
+
+@keyframes moving-ears-left{
+    to{
+        transform: rotate(-80deg);
+    }
+}
+
+@keyframes moving-ears-right{
+    to{
+        transform: rotate(80deg);
+    }
+}
+
+@keyframes jump{
+    to{
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes turning{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
