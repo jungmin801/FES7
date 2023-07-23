@@ -1,0 +1,148 @@
+/* 내용숨기기 */
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+/* 전역변수 */
+:root{
+    /* color */
+    --bg-color: #EAE8FE;
+    --white: #fff;
+    --btn-color: #6327FE;
+    --dark-gray:#333333;
+
+    /* fontSize */
+    --font9 : 9px;
+    --font10: 10px;
+    --font12: 12px;
+    --font13: 13px;
+    --font14: 14px;
+}
+
+
+/* reset */
+body{
+    margin: 0;
+}
+
+h1,
+h2,
+p{
+    margin: 0;
+    padding: 0;
+}
+
+ul, 
+li{
+    list-style: none;
+}
+
+ul{
+    padding: 0;
+}
+
+/* 레이아웃 */
+body{
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 43px;
+}
+
+.vending-machine{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+}
+
+.menu-area,
+.result-area{
+    width: 360px;
+    height: 545px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 27px;
+}
+
+.menu-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    
+}
+
+
+.menu-list .menu{
+    width: 94px;
+    height: 130px;
+    padding: 11px 0 9px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-list .menu::after{
+    display: block;
+    content: '1000원';
+    width: 70px;
+    padding: 5px;
+}
+
+.menu-list .menu > img{
+    display: block;
+    width: 36px;
+}
+
+
+/* 디자인 적용하기 */
+body{
+    background-color: var(--bg-color);
+    font-size: 14px;
+}
+
+.menu-area{
+    background-color: var(--white);
+}
+
+.result-area{
+    background-color: aqua;
+}
+
+.menu-list .menu{
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.50);
+
+    color: var(--dark-gray);
+    font-size: var(--font9);
+    font-weight: 500;
+}
+
+.menu-list .menu::after{
+    border-radius: 50px;
+    background: var(--btn-color, blue);
+
+    font-size: var(--font12);
+    color: #fff;
+    font-weight: 500;
+
+    text-align: center;
+    line-height: 1;
+}
