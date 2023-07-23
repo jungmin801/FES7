@@ -1,0 +1,183 @@
+/* layout */
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main{
+    flex-grow: 1;
+}
+
+/* title */
+
+.heart-title{
+    font-family: "Pretendard-Regular";
+    font-weight: 700;
+
+    padding : 0.5em 0 0.5em 2em;
+    line-height: 1;
+
+    background-image: url(../img/heart.svg);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 2em;
+    margin-bottom: 16px;
+}
+
+.main{
+    display: flex;
+    gap: 40px;
+}
+
+.main > section {
+    flex-basis: 0;
+}
+
+.main .main-form{
+    min-width: 360px;
+    flex-shrink: 0;
+    flex-grow: 1;
+
+    border-right: 1px solid var(--border-color);
+    padding: 56px 39px 56px 0;
+}
+
+.main .main-diary{
+    flex-grow: 2;
+}
+
+/* article */
+.list li{
+    margin: 70px 0;
+}
+
+.diary-article{
+    /* border: 1px solid var(--border-color); */
+
+    border-width: 4px 1px 1px;
+    border-color: var(--border-color);
+    border-style: solid;
+    padding: 60px 48px;
+    
+
+    position:relative;
+}
+
+.diary-article::before,
+.diary-article::after{
+    content: '';
+    display: block;
+    width: 80px;
+    height: 40px;
+    background-color: var(--bg-color);
+    background-size: contain;
+
+    position: absolute;
+    z-index: 100;
+}
+
+.diary-article::before{
+    top:-20px;
+    left:30px;
+    background-image: url(../img/quote-start.svg);
+    
+}
+
+
+.diary-article::after{
+    bottom:-20px;
+    right:30px;
+    background-image: url(../img/quote-end.svg);
+}
+
+.diary-article header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.diary-article header::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color);
+
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+
+
+.article-title{
+    font-weight: 700;
+}
+
+.article-time{
+    font-size: var(--font-micro);
+    color: var(--border-color)
+}
+
+.article-content{
+    font-weight: 700;
+    color: var(--sub-color);
+    font-size: var(--font-small);
+    line-height: 140%;
+}
+
+/* button */
+
+.button-group{
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+
+    background-color: #fff;
+    height: 40px;
+    width: 111px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.button-group span{
+    width: 1px;
+    height: 16px;
+    background-color: #D8DDDE;
+}
+
+.button-group button{
+    opacity: 0.5;
+    transition: all 0.3x;
+}
+
+.button-group button:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+/* 반응형 */
+
+@media (max-width: 1024px){
+    .main{
+        flex-direction: column;
+        margin: 40px auto 0;
+    }
+
+    .main .main-form{
+        min-width: 100%;
+        border: 0;
+        padding: 0;
+    }
+}

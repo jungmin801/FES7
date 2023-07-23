@@ -1,0 +1,257 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 내용숨기기 */
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+
+/*root -----------------------*/
+
+:root {
+  /* color */
+  --sub-color: #5a6a72;
+  --main-color: #29363d;
+  --bg-color: #fffaf0;
+  --border-color: #677880;
+  --gray: #f4f5f5;
+  --pink: #ff4f6e;
+
+  /* font-size */
+  --font-large: 24px;
+  --font-mid: 16px;
+  --font-small: 14px;
+  --font-micro: 12px;
+}
+
+/* reset------------- */
+a,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+button {
+  border: none;
+  background: none;
+}
+
+button{
+  font-family: "Pretendard-Regular", sans-serif;
+}
+
+img {
+  vertical-align: top;
+}
+
+ol, li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* css 적용------------- */
+
+body {
+  margin: 0;
+  font-family: "Pretendard-Regular", sans-serif;
+  background-color: var(--bg-color);
+  height: 100vh;
+  box-sizing: border-box;
+  color: var(--main-color);
+}
+
+.max-width {
+  width: 1284px;
+  max-width: calc(100% - 60px);
+  margin: auto;
+}
+
+/* header */
+
+.header {
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  /* padding: 0 10%; */
+}
+
+.header .max-width {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .login-text{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header .login-text p::after{
+  content: '|';
+  color: #d8ddde;
+  margin-left: 24px;
+}
+
+.header .login-text p strong{
+  box-shadow: inset 0 -0.5em 0 rgb(255, 79, 110, 0.2);
+  ;
+}
+
+
+
+/* footer */
+.footer > p {
+  font-size: calc(var(--font-large) / 2);
+  color: var(--border-color);
+  text-align: center;
+}
+
+
+/* 
+    // 회원가입 이미지 태그로 처리
+    .btn-join {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    color: var(--sub-color);
+    font-size: var(--font-small);
+} */
+
+/* 버튼 */
+/* 회원가입 이미지 백그라운드 처리 */
+[class^='btn'] {
+  display: inline-flex;
+  height: 40px;
+  padding: 0 20px 0 52px;
+  background-color: #fff;
+  background-image: url(../img/icon-join.svg);
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: 10px 50%;
+  align-items: center;
+}
+
+.btn-logout{
+  background-image: url(../img/icon-logout.svg);
+  font-weight: 700;
+}
+
+.login {
+    margin-top: 70px;
+}
+
+.login-title {
+  width: 250px;
+  margin: auto;
+  text-align: center;
+}
+
+.login-title img {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.login-title strong {
+  font-weight: 700;
+  font-size: var(--font-large);
+  color: var(--main-color);
+  box-shadow: inset 0 -0.5em 0 rgb(255, 79, 110, 0.2);
+  border-bottom: 2px solid var(--pink);
+}
+
+.login .form {
+  width: 392px;
+  margin: 40px auto 50px;
+}
+
+.form label {
+  display: block;
+  font-size: var(--font-small);
+  color: inherit;
+  margin-bottom: 8px;
+}
+
+.form input {
+  width: 100%;
+  height: 48px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 4px 0;
+}
+
+.form > div {
+    margin-bottom: 24px;
+  }
+
+  .form > button {
+  width: 100%;
+  height: 48px;
+
+  border-radius: 4px;
+  background-color: var(--main-color);
+  color: var(--gray);
+  font-weight: 700;
+  font-size: var(--font-mid);
+}
+
+.form > button:hover {
+  cursor: pointer;
+}
+
+.form textarea{
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  resize: none;
+
+  box-sizing: border-box;
+  padding: 10px;
+  font: inherit
+}
+
+/* 반응형 */
+@media (max-width:600px){
+  .header .login-text p{
+    position: absolute;
+    top: 140px;
+    right: 30px;
+  }
+
+  .header .login-text p::after{
+    display: none;
+  }
+
+}
