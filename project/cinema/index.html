@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungle Cinema</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <main class="cinema">
+        <header class="header">
+            <h2>정글 시네마 영화 목록</h2>
+            <ul class="tabs">
+                <li>
+                    <button type="button" class="active">현재상영영화</button>
+                </li>
+                <li>
+                    <button type="button">개봉예정영화</button>
+                </li>
+                <li>
+                    <button type="button">박스오피스</button>
+                </li>
+            </ul>
+        </header>
+        <section class="card-section">
+            <h2 class="a11y-hidden">영화 상세 목록</h2>
+            <article class="card">
+                <div class="card-top">
+                    <img src="./img/poster-img1.jpg" alt="">
+                    <h3 class="card-title">위니브 월드 : 새로운 시대</h3>
+                    <ul class="card-details">
+                        <li>
+                            <span>개요</span>
+                            <span>판타지</span>
+                        </li>
+                        <li>
+                            <span>평점</span>
+                            <span class="star">9.05</span>
+                        </li>
+                        <li>
+                            <span>개봉</span>
+                            <span>2021.03.27</span>
+                        </li>
+                        <li>
+                            <span>출연</span>
+                            <span>라이캣, 소울곰, 개리씨</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button type="button">예매하기</button>
+                    <button type="button">예고편</button>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <h1>Jungle Cinema</h1>
+    </footer>
+</body>
+
+</html>

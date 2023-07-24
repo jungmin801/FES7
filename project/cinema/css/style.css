@@ -1,0 +1,146 @@
+/* 숨기기 */
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+/* reset */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+button{
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3{
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul,
+li{
+    list-style: none; 
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}
+
+/* 전역변수 */
+:root{
+    /* color */
+    --bg-color: #F2F2F2;
+    --border-color: #BDBDBD;
+    --gray: #828282;
+    --red: #EB5757;
+    --black: #000;
+    --white: #fff;
+
+    /* fontSize */
+    --font24: 24px;
+    --font24: 22px;
+    --font16: 16px;
+    --font14: 14px;
+    --font13: 13px;
+}
+
+/* 공통 스타일 */
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+}
+
+.cinema{
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+}
+
+/* 헤더 */
+.header{
+    font-family: 'Roboto', sans-serif;
+}
+
+.header h2{
+    text-align: center;
+    font-size: var(--font24);
+    font-weight: 700;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tabs button{
+    color: var(--gray);
+    font-weight: 500;
+}
+
+.tabs button.active{
+    font-weight: 900;
+    color: var(--black);
+}
+
+/* 카드영역 */
+.card-section,
+.card{
+    background-color: var(--white);
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+}
+
+.card img{
+    border-radius: 10px;
+    border: 1px solid var(--gray-4, #BDBDBD);
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card .card-title{
+    font-weight: 900;
+}
+
+.card .card-details{
+    font-size: var(--font13);
+}
+
+.card-details span:first-child{
+    color: var(--gray);
+    margin-right: 5px ;
+}
+
+.card-details .star::before{
+    background-image: url(../img/icon-star.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0.1em;
+}
+
+/* 카드버튼 */
+.card .btn-group{
+    background-color: var(--bg-color);
+}
+
+.card .btn-group{
+    border-top: 2px solid var(--border-color);
+}
+
+.card .btn-group button:first-child{
+    border-right: 2px solid var(--border-color);
+}
+
+.btn-group button:last-child::before{
+    background-image: url(../img/icon-play.svg);
+    background-repeat: no-repeat;  
+    vertical-align: bottom;
+}
