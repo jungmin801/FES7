@@ -17,6 +17,8 @@
     --white: #fff;
     --btn-color: #6327FE;
     --dark-gray:#333333;
+    --light-gray: #BDBDBD;
+    --soldout: #EAE8FE;
 
     /* fontSize */
     --font9 : 9px;
@@ -28,15 +30,24 @@
 
 
 /* reset */
-body{
+body,
+ul,
+li,
+h1,
+h2,
+button,
+input,
+p{
     margin: 0;
+    padding: 0;
 }
 
 h1,
 h2,
-p{
-    margin: 0;
-    padding: 0;
+p,
+input{
+    font-size: inherit;
+    font-weight: inherit;
 }
 
 ul, 
@@ -44,105 +55,358 @@ li{
     list-style: none;
 }
 
-ul{
-    padding: 0;
+img{
+    vertical-align: top;
 }
 
-/* 레이아웃 */
+button{
+    border: none;
+    background-color: var(--white);
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+button:enabled{
+    cursor: pointer;
+}
+
+/* 공통 레이아웃 */
 body{
     height: 100vh;
+}
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 43px;
+h1{
+    text-align: center;
+    margin-bottom: 43px;
+}
+
+h1 img {
+    max-width: 50%;
 }
 
 .vending-machine{
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 28px;
 }
 
+.btn-shadow{
+    width: 94px;
+    height: 32px;
+
+    background: #FFF;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.50);
+    border-radius: 10px;
+}
+
+.selected{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 0 12px;
+    overflow: auto;
+    
+}
+
+.selected .selected-item{
+    width: 100%;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 10px;
+    padding-right: 8px;
+    box-sizing: border-box;
+}
+
+.selected .selected-item:first-child{
+    margin-top: 12px;
+}
+
+.selected .selected-item > div:first-child{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+}
+
+.selected img{
+    width: 18px;
+}
+
+/* 판매음료 영역 레이아웃*/
 .menu-area,
 .result-area{
     width: 360px;
     height: 545px;
 }
 
-.wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.menu-area{
+    box-sizing: border-box;
     padding: 0 27px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
 }
 
-.menu-list{
+.menu-area .menu-list{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: auto;
     gap: 12px;
-    
 }
-
 
 .menu-list .menu{
     width: 94px;
     height: 130px;
-    padding: 11px 0 9px;
     box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    position:relative;
+}
+
+.menu-list .menu img{
+    display: block;
+    width: 36px;
+
+}
+
+.menu-name{
+    display: block;
+}
+
+.menu-list .menu .price{
+    padding: 5px 16px;
+}
+
+/* 품절버튼 레이아웃*/
+.menu:disabled{
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu:disabled::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.soldout{
+    z-index: 10;
+    width: 45px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+}
+
+
+/* 카트영역 레이아웃 */
+.cart-area{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr;
+
+    gap: 11px 12px;
+    align-items: center;
+}
+
+.money{
+    box-sizing: border-box;
+    width: 100%;
+    height: 33px;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
-.menu-list .menu::after{
-    display: block;
-    content: '1000원';
-    width: 70px;
-    padding: 5px;
+.cart-area input{
+    padding-left: 6px;
+    height: 33px;
+    box-sizing: border-box;
 }
 
-.menu-list .menu > img{
-    display: block;
-    width: 36px;
+.cart-area .btn-get{
+    height: 106px;
+    box-sizing: border-box;
 }
 
+/* 결과영역 레이아웃 */
+.result-area{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-/* 디자인 적용하기 */
+.result-area section:first-child{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 9px 27px;
+}
+
+.result-area section:last-child{
+    flex-grow: 1;
+}
+
+.get-item-list{
+    padding: 0 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.get-item-list .selected{
+    height: 364px;
+}
+
+.get-item-list h2{
+    margin-bottom: 13px;
+}
+
+.get-item-list p{
+    margin-top: 6px;
+    text-align: right;
+}
+
+/* 공통디자인*/
 body{
     background-color: var(--bg-color);
     font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
+.money{
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.selected{
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+    border: 1px solid var(--light-gray); 
+    border-radius: 10px;
+}
+
+.selected .selected-item{
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.selected .selected-item strong{
+    padding: 6px 11px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+}
+
+/* 판매메뉴 디자인 */
 .menu-area{
     background-color: var(--white);
 }
-
-.result-area{
-    background-color: aqua;
-}
-
 .menu-list .menu{
     border-radius: 10px;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.50);
-
-    color: var(--dark-gray);
-    font-size: var(--font9);
-    font-weight: 500;
 }
 
-.menu-list .menu::after{
+.menu-name{
+    font-size: var(--font9);
+    color: var(--dark-gray);
+}
+
+.menu-list .menu .price{
     border-radius: 50px;
-    background: var(--btn-color, blue);
-
+    background-color: var(--btn-color);
     font-size: var(--font12);
-    color: #fff;
-    font-weight: 500;
+    color: var(--white);
+}
 
+/* 메뉴 클릭시 */
+.menu-list .menu.active{
+    border: 2px solid var(--btn-color);
+}
+
+/* 카트 디자인 */
+
+.cart-area input{
+    border-radius: 5px;
+    border: 1px solid var(--light-gray);
+}
+
+.cart-area button{
+    font-size: var(--font13);
+    
+}
+
+.btn-get{
+    background-color: var(--btn-color);
+    border-radius: 10px;
+    color: var(--white);
+}
+
+/* 품절버튼 디자인*/
+.menu:disabled{
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu:disabled::after{
+    background: rgba(0, 0, 0, 0.80);
+}
+
+.soldout{
+    color: var(--soldout);
+    border: 4px double var(--soldout);
+}
+
+
+/* 결과 영역 디자인*/
+
+.get-item-list{
+    background-color: var(--white);
+}
+
+.get-item-list h2{
+    font-weight: 700;
     text-align: center;
-    line-height: 1;
+}
+
+.result-area section:first-child{
+    background-color: var(--white);
+}
+
+
+/* 반응형 */
+@media (max-width:748px) {
+    h1{
+        margin-bottom: 18px;
+    }
+
+    .vending-machine{
+        flex-direction: column;
+        gap:0;
+    }
+    
+    .result-area{
+        gap:0;
+    }
 }
