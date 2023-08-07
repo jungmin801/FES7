@@ -13,26 +13,51 @@
             <h1>로그인 또는 회원가입</h1>
         </header>
         <main>
-            <h2>아이디/비밀번호 입력 및 소셜미디어 로그인 영역</h2>
+            <h2 class="a11y-hidden">아이디/비밀번호 입력 및 소셜미디어 로그인 영역</h2>
             <section class="top">
                 <h3>위니브에서 여러분의 궁금증을 해결하세요! :)</h3>
-                <form action=""></form>
-                <div>
+                <form action="./login.html">
+                    <div class="id-box">
+                        <label for="login-id" class="a11y-hidden">아이디</label>
+                        <input type="text" id="login-id" class="login-id" placeholder="아이디">
+                        
+                    </div>
+                    <div class="pw-box">
+                        <label for="password" class="a11y-hidden">비밀번호</label>
+                        <input type="password" id="password" class="password" placeholder="비밀번호">
+                    </div>
+                    <div>
+                        <input type="checkbox" id="btn-check" class="btn-check checkbox-hide">
+                        <label for="btn-check" class="label-hold">로그인 상태 유지</label>
+                    </div>
+                    <button type="button" class="btn-login">로그인</button>
+                </form>
+                <div class="join-forget">
                     <a href="#">회원가입</a>
                     <span>|</span>
                     <a href="#">아이디/비밀번호 찾기</a>
                 </div>
             </section>
             <section class="bottom">
-                <div>또는</div>
-                <ul>
-                    <li><button type="button">구글 계정으로 로그인</button></li>
-                    <li><button type="button">페이스북 계정으로 로그인</button></li>
-                    <li><button type="button">네이버 계정으로 로그인</button></li>
-                    <li><button type="button">카카오 계정으로 로그인</button></li>
+                <div class="line">&nbsp</div>
+                <ul class="social-list">
+                    <li>
+                        <button type="button" class="btn google">구글 계정으로 로그인</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn facebook">페이스북 계정으로 로그인</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn naver">네이버 계정으로 로그인</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn kakao">카카오 계정으로 로그인</button>
+                    </li>
                 </ul>
             </section>
         </main>
     </article>
+    <script src="main.js"></script>
 </body>
+
 </html>

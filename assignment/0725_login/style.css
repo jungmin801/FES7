@@ -1,3 +1,344 @@
+/* 폰트 */
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+
+/* 내용 숨기기 */
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body,
+h1,
+h2,
+h3,
+p,
+ul{
+    margin:0;
+    padding:0;
+}
+
+h1,
+h2,
+h3{
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+li{
+    list-style: none;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* root style */
+:root{
+    /* color */
+    --white: #fff;
+    --light-gray: #C4C4C4;
+    --dark-gray: #767676;
+    --red: #F4492E;
+    --btn: #2F80ED;
+    --facebook: #2D9CDB;
+    --naver: #00BF18;
+    --kakao: #F2C94C;
+
+    /* font Size */
+    --font20: 20px;
+    --font18: 18px;
+    --font14: 14px;
+}
+
+/* css 적용 */
 body{
-    background-color: beige;
+    height: 100vh;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-weight: 500;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+article{
+    width: 520px;
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+}
+
+main{
+    padding: 0 24px
+}
+
+/* 헤더 */
+
+header{
+    position: relative;
+}
+
+header::after{
+    display: inline-block;
+    content: '';
+    background: url(./images/close.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top:50%;
+    right: 24px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+header h1{
+    padding: 20px 0 18px;
+    border-bottom: 1px solid var(--light-gray);
+    text-align: center;
+}
+
+
+/* main 상단 영역 */
+.top{
+    padding: 26px 0 39px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top h3{
+    font-size: var(--font20);
+    line-height: 120%;
+    margin-bottom: 24px;
+}
+
+/* form 영역 */
+.top .login-id,
+.top .password{
+    display: block;
+    width: 100%;
+    padding: 15px 0 15px 16px;
+    border-radius: 5px;
+    border: 1px solid var(--light-gray);
+}
+.top .id-box,
+.top .pw-box{
+    margin-bottom: 10px;
+}
+
+.top .login-id:focus,
+.top .password:focus{
+    outline: 1px solid var(--dark-gray);
+    border:none;
+}
+
+.top .error-border{
+    border: 2px solid var(--red);
+}
+
+/* 
+.top .id-box::after,
+.top .pw-box::after{
+    display: block;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    font-size: var(--font14);
+    color: var(--red);
+} */
+
+/* .top .id-box::after{
+    content: '아이디를 입력해주세요.';
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+.top .pw-box::after{
+    content: '비밀번호를 입력해주세요.';
+    margin-top: 10px;
+    margin-bottom: 13px;
+} */
+
+
+.top .btn-check{
+    margin: 17px 0 21px;
+}
+
+.top .btn-check+label{
+    color: var(--dark-gray);
+}
+
+.top .btn-login{
+    width: 100%;
+    padding: 14px 0;
+    background-color: var(--btn);
+    border-radius: 5px;
+    color: var(--white);
+    font-size: var(--font18);
+    font-weight: 700;
+    line-height: 22px;
+    margin-bottom:20px;
+}
+
+.join-forget{
+    text-align: center;
+    color: var(--dark-gray);
+    font-size: var(--font14);
+}
+
+.join-forget span{
+    margin: 0 12px
+}
+
+/* 체크박스 */
+
+.checkbox-hide {
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+}
+
+.label-hold {
+    position: relative;
+}
+
+.btn-check+.label-hold::before {
+    display: inline-block;
+    content: '';
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    vertical-align: -5px;
+    cursor: pointer;
+    background: url(./images/unchecked.svg) no-repeat;
+}
+
+.btn-check:checked+.label-hold::before{
+    background: url(./images/checked.svg) no-repeat;
+}
+
+
+/* main 하단 영역 */
+
+.bottom{
+    padding-bottom: 25px;
+}
+
+.bottom .line{
+    height: 1px;
+    width: 100%;
+    background-color: var(--light-gray);
+
+    position: relative;
+}
+
+.bottom .line::before{
+    display: inline-block;
+    content: '또는';
+    position: absolute;
+    left: 50%;
+    bottom: -50%;
+    transform: translate(-50%, 50%);
+    padding: 0 13px;
+
+    background-color: var(--white);
+    color: var(--dark-gray);
+    font-size: var(--font14);
+}
+
+
+/* 하단 소셜 로그인 영역 */
+.social-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.social-list li{
+    width: 100%;
+}
+
+.social-list .btn{
+    width: 100%;
+    padding: 15px 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 5px;
+}
+
+.social-list .google{
+    border-color: var(--light-gray);
+}
+
+.social-list .facebook{
+    border-color: var(--facebook);
+}
+
+.social-list .naver{
+    border-color: var(--naver);
+}
+
+.social-list .kakao{
+    border-color: var(--kakao);
+}
+
+.social-list li{
+    position: relative;
+}
+
+.social-list .btn::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    background-image: url(./images/css_sprites.png);
+    background-repeat: no-repeat;
+    background-size: 96px 96px;
+}
+    
+.social-list .google::before{
+    background-position: -10px -10px;
+}
+
+.social-list .facebook::before{
+    background-position: -58px -58px;
+}
+
+.social-list .naver::before{
+    background-position: -10px -58px;
+}
+
+.social-list .kakao::before{
+    background-position: -58px -10px;
 }
