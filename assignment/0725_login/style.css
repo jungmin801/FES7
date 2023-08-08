@@ -56,6 +56,12 @@ button{
     cursor: pointer;
 }
 
+fieldset{
+    border: none;
+    padding:0;
+    margin:0;
+}
+
 /* root style */
 :root{
     /* color */
@@ -87,12 +93,12 @@ body{
 }
 
 article{
-    width: 520px;
+    max-width: 520px;
     border: 1px solid var(--light-gray);
     border-radius: 10px;
 }
 
-main{
+section.main{
     padding: 0 24px
 }
 
@@ -148,6 +154,7 @@ header h1{
 .top .id-box,
 .top .pw-box{
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .top .login-id:focus,
@@ -159,29 +166,6 @@ header h1{
 .top .error-border{
     border: 2px solid var(--red);
 }
-
-/* 
-.top .id-box::after,
-.top .pw-box::after{
-    display: block;
-    margin-top: 6px;
-    margin-bottom: 10px;
-    font-size: var(--font14);
-    color: var(--red);
-} */
-
-/* .top .id-box::after{
-    content: '아이디를 입력해주세요.';
-    margin-top: 6px;
-    margin-bottom: 10px;
-}
-
-.top .pw-box::after{
-    content: '비밀번호를 입력해주세요.';
-    margin-top: 10px;
-    margin-bottom: 13px;
-} */
-
 
 .top .btn-check{
     margin: 17px 0 21px;
