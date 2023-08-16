@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title>구조분해</title>
+</head>
+
+<body>
+    <script>
+        // let { one: myNum } = { one: 1 };
+        // console.log(myNum);
+
+
+        // function sayHi([a, b]) {
+        //     console.log(a);
+        //     console.log(b)
+        // }
+
+        // sayHi(['hello', '안녕'])
+
+
+        // function name({ a, b }) {
+        //     console.log(a);
+        //     console.log(b);
+
+        // }
+        // const obj = { a: 'kim', b: 'lee' }
+        // name(obj);
+
+        //     const dog = {
+        //         name: 'nelly'
+        //     }
+
+        //     function printDog(age, location) {
+        //         console.log(this.name, age, location)
+        //     }
+
+        //     const print = printDog.bind(dog);
+        //     print(10, 'busan');
+
+        var 오브젝트 = {
+            이름들: ['김', '이', '박'],
+            함수: function () {
+                console.log(this)
+                오브젝트.이름들.forEach(function () {
+                    console.log(this)
+                })
+            }
+        }
+
+        오브젝트.함수()
+
+    </script>
+</body>
+
+</html>
