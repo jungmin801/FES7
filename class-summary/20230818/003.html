@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title>실습</title>
+    <style>
+        body{
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .box{
+            width: 100%;
+            height: 300px;
+            background-color: gray;
+        }
+
+        ul{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding : 0;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <ul>
+        <li>
+            <button id="red" class="btn">빨강</button>
+        </li>
+        <li>
+            <button id="blue" class="btn">파랑</button>
+        </li>
+        <li>
+            <button id="green" class="btn">초록</button>
+        </li>
+    </ul>
+    <script>
+        const box = document.querySelector('.box');
+        const btn = document.querySelectorAll('.btn');
+
+        function changeColor(event){
+            box.style.backgroundColor = event.target.id
+        }
+
+        for(let i=0; i<btn.length; i++){
+            btn[i].addEventListener('click', changeColor); 
+        }
+
+
+    </script>
+</body>
+</html>

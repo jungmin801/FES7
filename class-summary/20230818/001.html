@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title></title>
+</head>
+<body>
+    <script>
+    const json = '{"name":"kim", "age" : 30}';
+    const obj = JSON.parse(json);
+    console.log(obj);
+
+    const json2 = '[1,2,3,4,5]';
+    const arr = JSON.parse(json2);
+    console.log(json2);
+
+    const obj2 = { name: 'park', age : 50};
+    const json3 = JSON.stringify(obj2);
+
+    console.log(json3);
+    console.log(typeof(json3)); // string
+
+    </script>
+   
+</body>
+</html>

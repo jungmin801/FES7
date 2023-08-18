@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title></title>
+</head>
+<body>
+
+    <div id="container">
+        <button>click</button>
+    </div>
+
+    <script>
+        // let jsonObj = {};
+        // function xhrRequest(){
+        //     const requestObj = new XMLHttpRequest();
+        //     requestObj.open('GET', 'heros.json');
+        //     requestObj.send();    
+        //     requestObj.onreadystatechange = () => {
+        //         if(requestObj.readyState === 4 && requestObj.status === 200) {
+        //             jsonObj = JSON.parse(requestObj.responseText);
+        //         }
+        //     }
+        // }
+        
+        let container = document.getElementById('container');
+
+        container.addEventListener('click', (e)=>{
+            console.log(e.target);
+            console.log(e.currentTarget);
+        })
+    </script>
+</body>
+</html>
