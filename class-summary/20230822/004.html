@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title></title>
+</head>
+<body>
+    <script>
+        const myself = {
+            name : 'jeong min',
+            age : '32',
+            sayHi : function(){
+                console.log(`안녕하세요 저는 ${this.name}입니다.`)
+            },
+            javaScript : function(mySkill){
+                mySkill.levelUp();
+            }
+        }
+
+        const skill = {
+            level : 1,
+            salary : 0,
+            levelUp : function(){
+                this.level++;
+                this.salary += 1000;
+            }
+        }
+        myself.javaScript(skill);
+
+        function Factory(name){
+            this.name = name;
+        }
+
+        const robot1 = new Factory('lee');
+
+        function Random(foods){
+            this.menu = foods;
+            this.sayMenu = function(){
+                let index = Math.floor((Math.random() * this.menu.length));
+                console.log(`오늘의 메뉴는 ${this.menu[index]}입니다!`) ;
+            }
+        }
+
+        const robot2 = new Random(['pizza', 'pasta', 'taco', 'burger', 'salad']);
+
+        robot2.sayMenu()
+
+        const robot3 = new Random(['떡볶이', '군만두', '탕수육', '쌀국수'])
+    </script>
+</body>
+</html>
