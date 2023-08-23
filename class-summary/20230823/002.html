@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title></title>
+</head>
+<body>
+    <script>
+        class Robot{
+            constructor(name){
+                this.myName = name;
+            }
+            
+            sayName(){
+                console.log(`제 이름은 ${this.myName}입니다.`)
+            }
+        }
+
+        const person = new Robot('정민');
+
+        class Factory2{
+            constructor(obj){
+                this.name = obj.name;
+                this.age = obj.age;
+                this.sayHi = function(){
+                    console.log(`안녕하세요 저는 ${this.name}입니다`)
+                } 
+            }
+            sayAge(){
+                console.log(`비밀인데 저는 ${this.age}살이에요`)
+            }
+        }
+
+
+        const myself = {
+            name : 'jeong min',
+            age : '32'
+        }
+
+        const person2 = new Factory2(myself)
+    </script>
+</body>
+</html>
