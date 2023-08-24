@@ -1,0 +1,26 @@
+.one {
+  height: 200px;
+  background-color: beige;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.two {
+  height: 200px;
+  background-color: beige;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.three {
+  height: 200px;
+  background-color: beige;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=016_믹스인.css.map */

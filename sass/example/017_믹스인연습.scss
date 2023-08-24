@@ -1,0 +1,22 @@
+@mixin flex($align){
+    display: flex;
+    flex-direction: row;
+    justify-content: $align; // 따옴표가 넣어서 들어간다.
+    align-items: #{$align}; // 따옴표를 뗴고 들어간다.
+}
+
+.one {
+    @include flex('center');
+}
+
+// 파라미터가 없는 믹스인
+@mixin box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.two{
+    @include box; //box(); 로 안해도 된다. 어차피 동일하다.
+}
+

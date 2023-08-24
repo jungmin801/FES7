@@ -1,0 +1,29 @@
+nav {
+    ul {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid black;
+        
+        li {
+        list-style: none;
+
+        &:first-child {
+            color: white;
+        }
+
+        &:nth-child(1) {
+            background-color: skyblue;
+        }
+        &:nth-child(2) {
+            background-color: gold;
+        }
+        &:nth-child(3) {
+            background-color: pink;
+        }
+
+        &:hover {
+            background-color: #eee;
+        }
+        }
+    }
+}

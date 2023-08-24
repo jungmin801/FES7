@@ -1,0 +1,12 @@
+.one {
+  display: flex;
+  flex-direction: row;
+  justify-content: "center";
+  align-items: center;
+}
+
+.two {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}/*# sourceMappingURL=017_믹스인연습.css.map */

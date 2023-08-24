@@ -1,0 +1,12 @@
+// .one > .two > .three
+
+.one{
+    color: red;
+    .two{
+        color : green;
+        .three{
+            color : blue;
+        }
+    }
+    
+}

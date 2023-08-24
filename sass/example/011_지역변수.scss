@@ -1,0 +1,30 @@
+// 웬만하면 전역변수로 쓰는 것이 편함.
+
+.one{
+    //지역변수
+    $value: red;
+    color: $value;
+
+    .three{
+        background-color: $value;
+    }
+}
+
+// 에러남
+// .two{
+//     color: $value;
+// }
+
+
+// 지역변수를 전역변수로 꺼내는 법
+// 권장하지 않는다.
+.one{
+    //지역변수
+    $value: red !global;
+    color: $value;
+
+    .three{
+        background-color: $value;
+    }
+}
+

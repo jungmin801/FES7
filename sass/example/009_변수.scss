@@ -1,0 +1,77 @@
+$hojun1: #000;
+$hojun2: #fff;
+// 한글 변수는 권장하지 않습니다.
+$큰글자: 32px;
+
+.one {
+    font-size: $큰글자;
+}
+
+.two {
+    color: $hojun1;
+}
+
+.three {
+    color: $hojun2;
+}
+
+// 'assets/img/icon1.png'
+// 'assets/img/icon2.png'
+// 'assets/img/icon3.png'
+$img-path: './assets/img/';
+$img-name: 'background.png';
+
+
+.test {
+    background: url($img-path + $img-name);
+}
+
+//색상
+$red: #ee4444;
+$black: #222;
+$bg-color: #3e5e9e;
+$link-color: red;
+$p-color: #282A36;
+
+//폰트사이즈
+$font-p: 13px;
+$font-h1: 28px;
+
+//폰트
+$base-font: 'Noto Sans KR', sans-serif;
+
+// lists
+$sizes: 40px, 50px, 80px;
+$valid-sides: top, bottom, left, right;
+
+//maps
+$font-sizes: (
+    "h1": 45px,
+    "h2": 19px,
+    "p": 16px
+);
+
+$font-sizes-test: (
+    "one": #fff,
+    "two": #ff0,
+    "three": #f00
+);
+
+// 1. lists
+// 0부터 시작하지 않습니다.
+.title {
+    font-size: nth($sizes, 1);
+}
+
+.title2 {
+    font-size: nth($sizes, -1);
+}
+
+// 2. maps
+.title3 {
+    font-size: map-get($font-sizes, "h1");
+}
+
+.title4 {
+    color: map-get($font-sizes-test, "three");
+}

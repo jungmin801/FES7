@@ -1,0 +1,18 @@
+$img: ('back': $path + 'background.png', 'icon': $path2 + 'icon_font_awesome_home.png');
+$path: 'assets/img/';
+
+nav{
+    background-image: url(map-get($img, "back"))
+}
+
+.home{
+    background: url(map-get($img, "icon"))
+}
+
+// nav{
+//     background-image: url('assets/img/background.png');
+// }
+
+// .home{
+//     background: url('assets/img/icon_font_awesome_home.png');
+// }

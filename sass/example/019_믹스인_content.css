@@ -1,0 +1,35 @@
+.one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: red;
+}
+
+.two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: blue;
+}
+
+.one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.one:hover {
+  background-color: red;
+}
+
+.two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.two:hover {
+  background-color: blue;
+}/*# sourceMappingURL=019_믹스인_content.css.map */

@@ -1,0 +1,31 @@
+.one{
+    font-size: 10px + 10px;
+}
+
+.two{
+    font-size : 10 + 10px ; // 예상치 못한 결과가 나올 수 있으니 주의
+}
+
+.three{
+    font-size: 10px - 3px;
+}
+
+.four{
+    font-size: 10 - 3px;
+}
+
+.five{
+    font-size: 10px -3px; //음수로 인식
+}
+
+.six{
+    font-size: 10px * 3; 
+}
+
+.seven{
+    font-size: (10px / 3px);
+}
+
+.eight{
+    font-size: 10px % 3px;
+}

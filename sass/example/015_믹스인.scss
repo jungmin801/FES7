@@ -1,0 +1,25 @@
+//mixin은 코드를 재사용하기 위해 만들어졌다. 선택자들 사이에서 반복되는 코드들은 mixin을 사용하여 코드 반복을 줄인다
+
+// @mixin 이름(파라미터) // 생성
+// @include 이름(인수) // 사용
+
+
+@mixin button($color) {
+    background-color: $color;
+    border-radius: 5px;
+    padding: .25em .5em;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $color;
+        border-color: $color;
+    }
+}
+
+.button-a {
+    @include button(#b4d455);
+}
+
+.button-b {
+    @include button(#c0ffee);
+}

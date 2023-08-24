@@ -1,0 +1,27 @@
+// .box-1{
+//     background-color: gold;   
+// }
+
+// .box-2{
+//     background-color: seagreen;
+// }
+
+// .box-3{
+//     background-color: pink;
+// }
+
+
+
+.box{
+    &-1{
+        background-color: gold;
+    }
+
+    &-2{
+        background-color: seagreen;
+    }
+
+    &-3{
+        background-color: pink;
+    }
+}
