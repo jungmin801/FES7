@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title></title>
+</head>
+
+<body>
+    <button type="button">click me</button>
+    <script>
+        const body = document.querySelector('body')
+        const btn = body.querySelector('button');
+        btn.addEventListener('click', callData);
+
+        function callData() {
+            const xhrObj = new XMLHttpRequest();
+            //통신 채널을 연다.
+            xhrObj.open('GET', './message.txt')
+            xhrObj.onreadystatechange = () => {
+                if (xhrObj.readyState === 4 && xhrObj.status === 200) {
+                    const result = xhrObj.responseText;
+                    const p = document.createElement('p');
+                    p.textContent = result;
+                    body.appendChild(p)
+                }
+            }
+            xhrObj.send();
+        }
+
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        let result = fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json');
+        result.then((response) => {
+            if(!response.ok){
+                throw new Error(`HTTP Error! Status: ${response.status}`);
+            }
+            console.log(response.json());
+            return response.json();
+        })
+        .then((data)=>{
+            console.log(data);
+            return data;
+        }).catch((error)=>{
+            console.error(error);
+        })
+    </script>
+</body>
+
+</html>

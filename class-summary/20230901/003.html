@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title></title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        class UserStorage{
+            searchUser(userName, password, onSuccess, onError){
+                const requestObj = new XMLHttpRequest();
+                requestObj.open('GET', './user.json');
+                requestObj.onreadystatechange = ()=>{
+                    if(requestObj.readyState === 4 && requestObj.status === 200){
+                        const result = JSON.parse(requestObj.responseText).user.find((item)=>{
+                            return item.userName === userName && item.password === password
+                        });
+
+                        if(result) {
+                            onSuccess(userName);
+                        } else {
+                            onError(new Error('user not found'));
+                        }
+                    }
+                }
+                requestObj.send();
+            }
+
+            sayHi(user, onSuccess, onError){
+                const requestObj = new XMLHttpRequest();
+                requestObj.open('GET', './greeting.json');
+                requestObj.onreadystatechange = ()=>{
+                    if(requestObj.readyState === 4 && requestObj.status === 200){
+                        const result = JSON.parse(requestObj.responseText).greetings.find((item)=>{
+                            return item.userName === user
+                        });
+
+                        if(result) {
+                            onSuccess(result);
+                        } else {
+                            onError(new Error('no greetings'));
+                        }
+                    }
+                }
+                requestObj.send();
+            }
+        }
+
+        const userStorage = new UserStorage();
+        
+        const userName = prompt('이름을 입력하세요');
+        const password = prompt('비밀번호를 입력하세요');
+        
+        userStorage.searchUser(
+            userName, 
+            password,
+            (name)=>{
+                userStorage.sayHi(name,
+                    (result)=>{
+                        alert(`인사드립니다. ${result.userName}님 ${result.greetings}`)
+                    }, 
+                    (error)=>{
+                    console.log(error);
+                    });
+            },
+            (error)=>{
+                console.log(error);
+            });
+    </script>
+</body>
+</html>
