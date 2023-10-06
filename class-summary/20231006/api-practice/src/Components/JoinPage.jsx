@@ -71,7 +71,7 @@ const JoinPage = ({handlePage})=>{
                 username : username,
                 email : email,
                 password : password,
-                accountName : accountName,
+                accountname : accountName,
                 intro : intro,
                 image : imgSrc
             }
